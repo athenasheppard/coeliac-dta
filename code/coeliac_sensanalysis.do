@@ -1,6 +1,6 @@
 ************************************************************************
 ** Name: coeliac_sensanalysis.do                                      **
-** Purpose: Meta-analyse comparative accuracy data (Table 3)          **
+** Purpose: Perform sensitivity analyses (Table 3, Appendix 5)        **
 ** Creator: Athena L Sheppard                                         **
 ** Contact: als75@leicester.ac.uk                                     **
 ** Stata version 16.0 (Created 17 May 2021)                           **
