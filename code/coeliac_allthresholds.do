@@ -35,74 +35,51 @@ gen sens = ( TP / ( TP + FN ) ) * 100
 gen spec = ( TN / ( TN + FP ) ) * 100
 
 
-* Calculate positive and negative predictive values
-gen ppv = ( TP / ( TP + FP ) ) * 100
-gen npv = ( TN / ( TN + FN ) ) * 100
-
-
 * Adults
 * IgA tTG
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA-tTG", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-tTG"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-tTG"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG"
 
 * IgG tTG
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgG-tTG", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgG-tTG"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgG-tTG"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgG-tTG"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgG-tTG"
 
 * IgA EMA
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA-EMA", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-EMA"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-EMA"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA"
 
 * IgG EMA
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgG-EMA", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgG-EMA"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgG-EMA"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgG-EMA"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgG-EMA"
 
 * IgA DGP
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA-DGP", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-DGP"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-DGP"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-DGP"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-DGP"
 
 * IgG DGP
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgG-DGP", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgG-DGP"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgG-DGP"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgG-DGP"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgG-DGP"
 
 * IgA/IgG DGP
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-DGP", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-DGP"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-DGP"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-DGP"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-DGP"
 
 * IgA/IgG tTG/DGP
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-tTG/DGP", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-tTG/DGP"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-tTG/DGP"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-tTG/DGP"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-tTG/DGP"
 
 * IgA AAA
 tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA-AAA", missing
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-AAA"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-AAA"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-AAA"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-AAA"
 
 
 * Children
@@ -110,64 +87,46 @@ summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-AAA"
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA-tTG", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-tTG"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-tTG"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-tTG"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-tTG"
 
 * IgG tTG
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgG-tTG", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgG-tTG"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgG-tTG"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgG-tTG"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgG-tTG"
 
 * IgA/IgG tTG
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG"
 
 * IgA EMA
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA-EMA", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-EMA"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-EMA"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-EMA"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-EMA"
 
 * IgA/IgG EMA
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA/IgG-EMA", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA/IgG-EMA"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA/IgG-EMA"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-EMA"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-EMA"
 
 * IgA DGP
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA-DGP", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-DGP"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-DGP"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-DGP"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-DGP"
 
 * IgG DGP
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgG-DGP", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgG-DGP"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgG-DGP"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgG-DGP"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgG-DGP"
 
 * IgA/IgG DGP
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA/IgG-DGP", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA/IgG-DGP"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA/IgG-DGP"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-DGP"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-DGP"
 
 * IgA/IgG tTG/DGP
 tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG/DGP", missing
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG/DGP"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG/DGP"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG/DGP"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG/DGP"
 
 
 * Mixed or age unspecified
@@ -178,57 +137,41 @@ replace Adult_child_res = "Other" if Adult_child_res == "Mixed" | ///
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgA-tTG", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgA-tTG"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgA-tTG"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgA-tTG"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgA-tTG"
 
 * IgG tTG
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgG-tTG", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgG-tTG"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgG-tTG"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgG-tTG"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgG-tTG"
 
 * IgA/IgG tTG
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgA/IgG-tTG", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgA/IgG-tTG"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgA/IgG-tTG"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgA/IgG-tTG"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgA/IgG-tTG"
 
 * IgA EMA
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgA-EMA", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgA-EMA"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgA-EMA"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgA-EMA"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgA-EMA"
 
 * IgA DGP
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgA-DGP", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgA-DGP"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgA-DGP"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgA-DGP"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgA-DGP"
 
 * IgG DGP
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgG-DGP", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgG-DGP"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgG-DGP"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgG-DGP"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgG-DGP"
 
 * IgA/IgG DGP
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgA/IgG-DGP", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgA/IgG-DGP"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgA/IgG-DGP"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgA/IgG-DGP"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgA/IgG-DGP"
 
 * IgA AAA
 tab Index_threshold if Adult_child_res == "Other" && Biomarker == "IgA-AAA", missing
 summarize sens if Adult_child_res == "Other" && Biomarker == "IgA-AAA"
 summarize spec if Adult_child_res == "Other" && Biomarker == "IgA-AAA"
-summarize ppv if Adult_child_res == "Other" && Biomarker == "IgA-AAA"
-summarize npv if Adult_child_res == "Other" && Biomarker == "IgA-AAA"
 
 
 * Display total number of patients and number of patients with coeliac disease,

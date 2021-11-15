@@ -28,16 +28,6 @@ gen sens = TP / ( TP + FN )
 gen spec = TN / ( TN + FP )
 
 
-* Calculate positive and negative predictive values
-gen ppv = TP / ( TP + FP )
-gen npv = TN / ( TN + FN )
-
-
-* Calculate postive and negative likelihood ratios
-gen lrpos = sens / (1 - spec)
-gen lrneg = (1 - sens) / spec
-
-
 * Risk of bias assessment
 * Overall risk of bias
 gen ROB = "Unclear"
@@ -136,13 +126,6 @@ metandiplot TP FP FN TN if spec != ., ///
 use ma_data, clear
 * Meta-analysis, most commonly reported threshold
 metandi2 TP FP FN TN if Adult_child_res == "Adults" && Biomarker == "IgA-DGP" && Index_threshold == "20 U/mL", u
-* Positive and negative predictive values and natural frequencies
-display %4.0f 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) // tp
-display %4.0f 100 - ( 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) ) // fn
-display %4.0f 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) // tn
-display %4.0f 9900 - ( 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) ) // fp
-cii proportions 547 96 // ppv confidence interval
-cii proportions 9453 9449 // npv confidence interval
 * Summary ROC plot
 gen common_thresh = (Index_threshold == "20 U/mL") // create variable indicating most commonly reported threshold
 keep if Adult_child_res == "Adults" && Biomarker == "IgA-DGP"
@@ -175,13 +158,6 @@ metandiplot TP FP FN TN if spec != ., ///
 use ma_data, clear
 * Meta-analysis, most commonly reported threshold
 metandi2 TP FP FN TN if Adult_child_res == "Adults" && Biomarker == "IgG-DGP" && Index_threshold == "20 U/mL", u
-* Positive and negative predictive values and natural frequencies
-display %4.0f 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) // tp
-display %4.0f 100 - ( 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) ) // fn
-display %4.0f 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) // tn
-display %4.0f 9900 - ( 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) ) // fp
-cii proportions 158 94 // ppv confidence interval
-cii proportions 9842 9836 // npv confidence interval
 * Summary ROC plot
 gen common_thresh = (Index_threshold == "20 U/mL") // create variable indicating most commonly reported threshold
 keep if Adult_child_res == "Adults" && Biomarker == "IgG-DGP"
@@ -214,13 +190,6 @@ metandiplot TP FP FN TN if spec != ., ///
 use ma_data, clear
 * Meta-analysis, most commonly reported threshold
 metandi TP FP FN TN if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-DGP" && Index_threshold == "20 U/mL", gllamm
-* Positive and negative predictive values and natural frequencies
-display %4.0f 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) // tp
-display %4.0f 100 - ( 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) ) // fn
-display %4.0f 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) // tn
-display %4.0f 9900 - ( 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) ) // fp
-cii proportions 418 91 // ppv confidence interval
-cii proportions 9582 9573 // npv confidence interval
 * Summary ROC plot
 gen common_thresh = (Index_threshold == "20 U/mL") // create variable indicating most commonly reported threshold
 keep if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-DGP"
@@ -248,13 +217,6 @@ metandiplot TP FP FN TN, ///
 use ma_data, clear
 * Meta-analysis, most commonly reported threshold
 metandi2 TP FP FN TN if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-tTG/DGP" && Index_threshold == "20 U/mL", u
-* Positive and negative predictive values and natural frequencies
-display %4.0f 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) // tp
-display %4.0f 100 - ( 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) ) // fn
-display %4.0f 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) // tn
-display %4.0f 9900 - ( 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) ) // fp
-cii proportions 1448 94 // ppv confidence interval
-cii proportions 8552 8546 // npv confidence interval
 * Summary ROC plot
 gen common_thresh = (Index_threshold == "20 U/mL") // create variable indicating most commonly reported threshold
 keep if Adult_child_res == "Adults" && Biomarker == "IgA/IgG-tTG/DGP"
@@ -287,13 +249,6 @@ metandiplot TP FP FN TN if spec != ., ///
 use ma_data, clear
 * Meta-analysis, most commonly reported threshold
 metandi2 TP FP FN TN if Adult_child_res == "Adults" && Biomarker == "IgA-AAA" && Index_threshold == "25 U/mL", u
-* Positive and negative predictive values and natural frequencies
-display %4.0f 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) // tp
-display %4.0f 100 - ( 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) ) // fn
-display %4.0f 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) // tn
-display %4.0f 9900 - ( 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) ) // fp
-cii proportions 825 83 // ppv confidence interval
-cii proportions 9175 9158 // npv confidence interval
 gen common_thresh = (Index_threshold == "25 U/mL") // create variable indicating most commonly reported threshold
 keep if Adult_child_res == "Adults" && Biomarker == "IgA-AAA"
 total total if common_thresh == 1 // total number of patients
@@ -420,13 +375,6 @@ metandiplot TP FP FN TN, ///
 use ma_data, clear
 * Meta-analysis, most commonly reported threshold
 metandi TP FP FN TN if Adult_child_res == "Children" && Biomarker == "IgA/IgG-DGP" && Index_threshold == "20 U/mL"
-* Positive and negative predictive values and natural frequencies
-display %4.0f 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) // tp
-display %4.0f 100 - ( 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) ) // fn
-display %4.0f 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) // tn
-display %4.0f 9900 - ( 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) ) // fp
-cii proportions 2333 96 //ppv confidence interval
-cii proportions 7667 7663 // npv confidence interval
 * Summary ROC plot
 gen common_thresh = (Index_threshold == "20 U/mL") // create variable indicating most commonly reported threshold
 keep if Adult_child_res == "Children" && Biomarker == "IgA/IgG-DGP"
@@ -459,12 +407,6 @@ metandiplot TP FP FN TN if spec != ., ///
 use ma_data, clear
 * Meta-analysis, most commonly reported threshold
 metandi2 TP FP FN TN if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG/DGP" && Index_threshold == "20 U/mL", u
-display %4.0f 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) // tp
-display %4.0f 100 - ( 100 * ( exp( e(b)[1,1] ) / ( 1 + exp( e(b)[1,1] ) ) ) ) // fn
-display %4.0f 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) // tn
-display %4.0f 9900 - ( 9900 * ( exp( e(b)[1,2] ) / ( 1 + exp( e(b)[1,2] ) ) ) ) // fp
-cii proportions 3842 96 // ppv confidence interval
-cii proportions 6158 6154 // npv confidence interval
 * Summary ROC plot
 gen common_thresh = (Index_threshold == "20 U/mL") // create variable indicating most commonly reported threshold
 keep if Adult_child_res == "Children" && Biomarker == "IgA/IgG-tTG/DGP"

@@ -24,10 +24,6 @@ summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
 && Symptomatic == "Symptomatic"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
 && Symptomatic == "Symptomatic"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
-&& Symptomatic == "Symptomatic"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
-&& Symptomatic == "Symptomatic"
 * Summary ROC plot
 gen symptoms = (Symptomatic == "Symptomatic") // create variable indicating reason for biopsy
 keep if Adult_child_res == "Adults" && Biomarker == "IgA-tTG"
@@ -61,10 +57,6 @@ tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 && Symptomatic == "Symptomatic"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
-&& Symptomatic == "Symptomatic"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
-&& Symptomatic == "Symptomatic"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 && Symptomatic == "Symptomatic"
 * Summary ROC plot
 gen symptoms = (Symptomatic == "Symptomatic") // create variable indicating reason for biopsy
@@ -100,10 +92,6 @@ summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
 && Symptomatic == "Symptomatic"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
 && Symptomatic == "Symptomatic"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
-&& Symptomatic == "Symptomatic"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
-&& Symptomatic == "Symptomatic"
 * Summary ROC plot
 gen symptoms = (Symptomatic == "Symptomatic") // create variable indicating reason for biopsy
 keep if Adult_child_res == "Children" && Biomarker == "IgA-tTG"
@@ -137,10 +125,6 @@ tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA-EMA" /
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
 && Symptomatic == "Symptomatic"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
-&& Symptomatic == "Symptomatic"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
-&& Symptomatic == "Symptomatic"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
 && Symptomatic == "Symptomatic"
 * Summary ROC plot
 gen symptoms = (Symptomatic == "Symptomatic") // create variable indicating reason for biopsy
@@ -177,10 +161,6 @@ summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
 && QUADAS_flow_ref == "Yes"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
 && QUADAS_flow_ref == "Yes"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
-&& QUADAS_flow_ref == "Yes"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
-&& QUADAS_flow_ref == "Yes"
 * Summary ROC plot
 gen biopsy = (QUADAS_flow_ref == "Yes") // create variable indicating whether all patients underwent biopsy
 keep if Adult_child_res == "Adults" && Biomarker == "IgA-tTG"
@@ -214,10 +194,6 @@ tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 && QUADAS_flow_ref == "Yes"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
-&& QUADAS_flow_ref == "Yes"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
-&& QUADAS_flow_ref == "Yes"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 && QUADAS_flow_ref == "Yes"
 * Summary ROC plot
 gen biopsy = (QUADAS_flow_ref == "Yes") // create variable indicating whether all patients underwent biopsy
@@ -253,10 +229,6 @@ summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
 && QUADAS_flow_ref == "Yes"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
 && QUADAS_flow_ref == "Yes"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
-&& QUADAS_flow_ref == "Yes"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
-&& QUADAS_flow_ref == "Yes"
 * Summary ROC plot
 gen biopsy = (QUADAS_flow_ref == "Yes") // create variable indicating whether all patients underwent biopsy
 keep if Adult_child_res == "Children" && Biomarker == "IgA-tTG"
@@ -290,10 +262,6 @@ tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA-EMA" /
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
 && QUADAS_flow_ref == "Yes"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
-&& QUADAS_flow_ref == "Yes"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
-&& QUADAS_flow_ref == "Yes"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
 && QUADAS_flow_ref == "Yes"
 * Summary ROC plot
 gen biopsy = (QUADAS_flow_ref == "Yes") // create variable indicating whether all patients underwent biopsy
@@ -330,10 +298,6 @@ summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
 && ROB == "Low"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
 && ROB == "Low"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
-&& ROB == "Low"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-tTG" ///
-&& ROB == "Low"
 * Summary ROC plot
 gen lowrob = (ROB == "Low") // create variable indicating sets of 2x2 data at low risk of bias
 keep if Adult_child_res == "Adults" && Biomarker == "IgA-tTG"
@@ -367,10 +331,6 @@ tab Index_threshold if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 summarize sens if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 && ROB == "Low"
 summarize spec if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
-&& ROB == "Low"
-summarize ppv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
-&& ROB == "Low"
-summarize npv if Adult_child_res == "Adults" && Biomarker == "IgA-EMA" ///
 && ROB == "Low"
 * Summary ROC plot
 gen lowrob = (ROB == "Low") // create variable indicating sets of 2x2 data at low risk of bias
@@ -406,10 +366,6 @@ summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
 && ROB == "Low"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
 && ROB == "Low"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
-&& ROB == "Low"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-tTG" ///
-&& ROB == "Low"
 * Summary ROC plot
 gen lowrob = (ROB == "Low") // create variable indicating sets of 2x2 data at low risk of bias
 keep if Adult_child_res == "Children" && Biomarker == "IgA-tTG"
@@ -443,10 +399,6 @@ tab Index_threshold if Adult_child_res == "Children" && Biomarker == "IgA-EMA" /
 summarize sens if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
 && ROB == "Low"
 summarize spec if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
-&& ROB == "Low"
-summarize ppv if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
-&& ROB == "Low"
-summarize npv if Adult_child_res == "Children" && Biomarker == "IgA-EMA" ///
 && ROB == "Low"
 * Summary ROC plot
 gen lowrob = (ROB == "Low") // create variable indicating sets of 2x2 data at low risk of bias
