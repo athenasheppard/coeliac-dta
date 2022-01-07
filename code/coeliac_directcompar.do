@@ -2,7 +2,7 @@
 ** Name: coeliac_directcompar.do                                      **
 ** Purpose: Summarise comparative accuracy data (Table 4)             **
 ** Creator: Athena L Sheppard                                         **
-** Contact: als75@leicester.ac.uk                                     **
+** Contact: 2138248@swansea.ac.uk                                     **
 ** Stata version 16.0 (Created 17 May 2021)                           **
 ************************************************************************
 
